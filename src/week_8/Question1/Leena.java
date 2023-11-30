@@ -13,4 +13,23 @@ For N = 3 one of the possible answers is [-1,0,1] (but there are many more
 correct answers).
 
      */
+    public static int[] sumUpToZero(int n) {
+        int[] res = new int[n];
+        for (int i = 0; i < res.length - 1; i++) {
+            res[i++] = i;
+            res[i] = -i;
+        }
+        return res;
+    }
+
+    public static int[] sumUpToZero2(int N) {
+        int[] result = new int[N];
+        int sum = 0;
+        for(int i=0; i < N-1; i++) { // 0, 1, 2
+            result[i] =i;  //  [0, 1, 2, -3]
+            sum += i; // 3
+        }
+        result[N-1] = -sum; //3
+        return result;
+    }
 }
